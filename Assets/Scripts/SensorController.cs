@@ -35,7 +35,7 @@ public class SensorController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.right, out hitRight, 0.6f))
         {
             Debug.DrawRay(transform.position, transform.right, Color.green, 0.6f);
-            print("Found an object: " + hitRight.collider.name);
+            //print("Found an object: " + hitRight.collider.name);
 
             if (hitRight.collider.gameObject.layer == 6)
             {
@@ -49,7 +49,7 @@ public class SensorController : MonoBehaviour
         {
 
             Debug.DrawRay(transform.position, -transform.right, Color.green, 0.6f);
-            print("Found an object: " + hitLeft.collider.name);
+            //print("Found an object: " + hitLeft.collider.name);
 
             if (hitLeft.collider.gameObject.layer == 6)
             {
@@ -59,8 +59,8 @@ public class SensorController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.forward, out hitForward, 0.6f))
         {
 
-            Debug.DrawRay(transform.position, transform.forward, Color.green, 0.6f);
-            print("Found an object: " + hitForward.collider.name);
+            Debug.DrawRay(transform.position, transform.forward, Color.red, 0.6f);
+            //print("Found an object: " + hitForward.collider.name);
 
             if (hitForward.collider.gameObject.layer == 6)
             {
@@ -70,8 +70,8 @@ public class SensorController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.back, out hitBack, 0.6f))
         {
 
-            Debug.DrawRay(transform.position, -transform.forward, Color.green, 0.6f);
-            print("Found an object: " + hitBack.collider.name);
+            Debug.DrawRay(transform.position, -transform.forward, Color.red, 0.6f);
+            //print("Found an object: " + hitBack.collider.name);
 
             if (hitBack.collider.gameObject.layer == 6)
             {
