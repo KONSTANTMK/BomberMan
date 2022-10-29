@@ -67,7 +67,7 @@ public class BomberManController : MonoBehaviour
                _rigidbody.velocity = Vector3.ClampMagnitude(new Vector3(0, 0, vertical), 1) * speed;
                 transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, vertical)), Time.deltaTime * 10);
-        }
+            }
 
 
 
