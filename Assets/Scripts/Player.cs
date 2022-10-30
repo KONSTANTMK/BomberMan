@@ -42,8 +42,9 @@ public class Player : MonoBehaviour
         if (playerNumber == 1)
         {
             UpdatePlayer1Movement ();
-        } else
-        {
+        } 
+        else
+        { 
             UpdatePlayer2Movement ();
         }
     }
