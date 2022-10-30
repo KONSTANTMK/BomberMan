@@ -130,15 +130,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter (Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (!dead && other.CompareTag ("Explosion"))
-        { 
-            Debug.Log ("P" + playerNumber + " hit by explosion!");
+        if (!dead && other.CompareTag("Explosion"))
+        {
+            Debug.Log("P" + playerNumber + " hit by explosion!");
 
             dead = true;
-            globalManager.PlayerDied (playerNumber); 
-            Destroy (gameObject);
+            globalManager.PlayerDied(playerNumber);
+            Destroy(gameObject);
         }
     }
 }
