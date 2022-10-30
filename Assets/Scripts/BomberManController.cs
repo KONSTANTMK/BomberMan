@@ -49,46 +49,43 @@ public class BomberManController : MonoBehaviour
 
     private void Move()
     {
+        
+        
+        
+        if (horizontal > 0.0f && vertical == 0.0f && _SensorController.CanMoveRight)
+            {
+                 
+                _Animator.SetFloat("Speed", Vector3.ClampMagnitude(new Vector3(horizontal, 0, 0), 1).magnitude);
+                _rigidbody.velocity = Vector3.ClampMagnitude(new Vector3(horizontal, 0, 0), 1) * speed;
+                transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Round(transform.position.z));
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(horizontal, 0, 0)),Time.deltaTime * 10);
 
+            }
 
-
-        if (horizontal > 0.0f && vertical == 0.0f && _SensorController.CanMoveRight || horizontal < 0.0f && vertical == 0.0f && _SensorController.CanMoveLeft)
-        {
-
+            else if(horizontal < 0.0f && vertical == 0.0f && _SensorController.CanMoveLeft)
+            {
             _Animator.SetFloat("Speed", Vector3.ClampMagnitude(new Vector3(horizontal, 0, 0), 1).magnitude);
             _rigidbody.velocity = Vector3.ClampMagnitude(new Vector3(horizontal, 0, 0), 1) * speed;
-            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Round(transform.position.z));
+                transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Round(transform.position.z));
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(horizontal, 0, 0)), Time.deltaTime * 10);
 
         }
-        else if (horizontal == 0.0f && vertical > 0.0f && _SensorController.CanMoveForward || horizontal == 0.0f && vertical < 0.0f && _SensorController.CanMoveBack)
-        {
+        
+            else if (horizontal == 0.0f && vertical > 0.0f && _SensorController.CanMoveForward)
+            {
+            _Animator.SetFloat("Speed", Vector3.ClampMagnitude(new Vector3(0, 0, vertical), 1).magnitude);
+               _rigidbody.velocity = Vector3.ClampMagnitude(new Vector3(0, 0, vertical), 1) * speed;
+                transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, vertical)), Time.deltaTime * 10);
+        }
+
+            else if (horizontal == 0.0f && vertical < 0.0f && _SensorController.CanMoveBack)
+            {
             _Animator.SetFloat("Speed", Vector3.ClampMagnitude(new Vector3(0, 0, vertical), 1).magnitude);
             _rigidbody.velocity = Vector3.ClampMagnitude(new Vector3(0, 0, vertical), 1) * speed;
             transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, vertical)), Time.deltaTime * 10);
         }
-        
-        if (horizontal > 0.0f && _SensorController.CanMoveRight == false || horizontal < 0.0f && _SensorController.CanMoveLeft == false)
-        {
-
-            _Animator.SetFloat("Speed", Vector3.ClampMagnitude(new Vector3(0, 0, 0), 1).magnitude);
-            _rigidbody.velocity = new Vector3(0,0,0);
-            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Round(transform.position.z));
-         
-            
-
-        }
-        else if (vertical > 0.0f && _SensorController.CanMoveForward == false || vertical < 0.0f && _SensorController.CanMoveBack == false)
-        {
-            _Animator.SetFloat("Speed", Vector3.ClampMagnitude(new Vector3(0, 0, 0), 1).magnitude);
-            _rigidbody.velocity = new Vector3(0, 0, 0);
-            transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
-
-        }
-
-
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
