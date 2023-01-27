@@ -8,6 +8,9 @@
 </a>
 </p>
 
-# DistriBook
+# Bomberman
 
+Web service for buying books, written in ASP.NET Core MVC to demonstrate my skills.
+
+<hr/>
 Web service for buying books, written in ASP.NET Core MVC to demonstrate my skills.
