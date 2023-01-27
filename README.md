@@ -4,7 +4,7 @@
 
 <p align="center">
 <img src="https://img.shields.io/badge/Study%20Project-C%20Sharp-green.svg" alt="Study Project C#"/>
-<img src="https://img.shields.io/badge/ASP.NET%20Core%20MVC-6.0-blue.svg" alt="ASP.NET Core MVC 4.0"/>
+<img src="https://img.shields.io/badge/Unity%203D%20Game-2021.3.12f1-blue.svg" alt="Unity 3D Game 2021.3.12f1"/>
 </a>
 </p>
 
