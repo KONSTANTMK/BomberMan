@@ -10,8 +10,8 @@
 
 # Bomberman
 
-Web service for buying books, written in ASP.NET Core MVC to demonstrate my skills.
+Unity 3D game made in Unity 2021.3.12f1 to demonstrate my skills.
 
 <hr/>
 
-Web service for buying books, written in ASP.NET Core MVC to demonstrate my skills.
+Unity 3D игра, сделанная в Unity 2021.3.12f1 с целью демонстрации моих навыков.
